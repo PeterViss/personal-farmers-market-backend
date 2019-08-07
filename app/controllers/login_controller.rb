@@ -1,13 +1,11 @@
-class UsersController < ApplicationController
-    def show
-     user = User.find(params[:id])
-        render json: user.to_json(user_show(user))
+class LoginController < ApplicationController
+    def new 
+        user = User.find_by(username: params[:username])
+        if user && user.authenticate(params[:password])
+            render json: {userinfo: user.to_json(user_show(user)), authenticated: "true"}
+        else 
+            render json: {message: "no way homay"}
     end 
-
-
-
-
-
 
     private 
 
@@ -44,5 +42,4 @@ class UsersController < ApplicationController
             }
         }
     end
-    end 
 end

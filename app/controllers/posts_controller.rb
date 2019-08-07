@@ -37,6 +37,11 @@ class PostsController < ApplicationController
             :except => [
                 :created_at, :updated_at
             ],
+            :include => {
+                :comments => {
+                    :except =>[:created_at, :updated_at]
+                }
+            }
         }
     end 
 end
