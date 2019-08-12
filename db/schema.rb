@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_204120) do
 
   create_table "posts", force: :cascade do |t|
     t.string "content"
-    t.datetime "date"
+    t.datetime "startTime", null: false
     t.string "location"
     t.integer "zip"
     t.string "state"

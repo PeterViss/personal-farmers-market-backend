@@ -12,12 +12,14 @@ user1 = User.create(username: "Dave" , password: "password", role: 0)
 user2 = User.create(username: "Collin", password: "password", role: 0 )
 user3 = User.create(username: "Peter", password: "password", role: 1)
 
-post1 = Post.create(content: "I hope this works", date: "August 23, 2019 2:00", location: "the corner of noneyah business", zip: 20816, state: "MD", attending: 7, user_id: user3.id)
-post2 = Post.create(content: "For Real tho", date: "August 24, 2019 1:00", location: "the corner of Giant Food Store", zip: 20816, state: "MD", attending: 12, user_id: user1.id)
+post1 = Post.create(content: "I hope this works", startTime: DateTime.new(2019, 8, 23), location: "the corner of noneyah business", zip: 20816, state: "MD", attending: 7, user_id: user1.id)
+post2 = Post.create(content: "For Real tho", startTime: DateTime.new(2019, 8, 25), location: "the corner of Giant Food Store", zip: 20816, state: "MD", attending: 12, user_id: user1.id)
+post3 = Post.create(content: "Selling Beats", startTime: DateTime.new(2019, 8, 27), location: "Near Apple Market", zip: 93263, state: "CA", attending: 9, user_id: user1.id)
+post3 = Post.create(content: "Selling Corn", startTime: DateTime.new(2019, 8, 31), location: "Trader Joes", zip: 93263, state: "CA", attending: 10, user_id: user1.id)
 
 
-comment1 = Comment.create(content: "I need this to work", user_id: user2.id, post_id: post1.id)
-comment2 = Comment.create(content: "pleeeeeease do it", user_id: user3.id, post_id: post2.id)
+comment1 = Comment.create(content: "will this work?", user_id: user2.id, post_id: post1.id)
+comment2 = Comment.create(content: "No but this will", user_id: user3.id, post_id: post2.id)
 
 
 
@@ -69,6 +71,7 @@ prod4 = Product.create(name: "corn", user_id: user2.id, price: ".50")
 prod5 = Product.create(name: "honey", user_id: user1.id, price: "10.70")
 prod6 = Product.create(name: "tree bark", user_id: user2.id, price: "0")
 
-binding.pry
+# binding.pry
+
 
  

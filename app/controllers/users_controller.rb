@@ -5,11 +5,28 @@ class UsersController < ApplicationController
     end 
 
 
-
+    def posts
+        user = User.find(params[:id])
+        user.posts 
+        render json: user.posts.to_json(post_show)
+    end 
 
 
 
     private 
+
+    def post_show
+        {
+            :except => [
+                :created_at, :updated_at
+            ],
+            :include => {
+                :comments => {
+                    :except =>[:created_at, :updated_at]
+                }
+            }
+        }
+    end 
 
     def user_show(user)
         if user.role == 'farmer'
@@ -22,7 +39,7 @@ class UsersController < ApplicationController
                     :except =>[:created_at, :updated_at]
                 },
                 :followers => {
-                    :except =>[:created_at, :updated_at]
+                    :except =>[:password_digest, :created_at, :updated_at]
                 },
                 :posts => {
                     :except =>[:created_at, :updated_at]
@@ -39,7 +56,7 @@ class UsersController < ApplicationController
             ],
             :include => {
                 :followees => {
-                    :except =>[:created_at, :updated_at]
+                    :except =>[:password_digest, :created_at, :updated_at]
                 }
             }
         }

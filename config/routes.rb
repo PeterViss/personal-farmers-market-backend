@@ -2,9 +2,15 @@ Rails.application.routes.draw do
   get '/users/:id' => 'users#show'
   post '/users/:id' => 'users#create'
   get '/users' => 'users#index'
+
+  get '/biographies/:id' => 'biographies#show'
+  patch '/biographies/:id' => 'biographies#update'
+  post '/biographies/:id' => 'posts#create'
+
   get '/categories' => 'categories#index'
   get '/categories/:id' => 'categories#show'
-  
+  get '/user/posts/:id' => 'users#posts'
+
   get '/posts' => 'posts#index'
   get '/posts/:id' => 'posts#show'
   patch '/posts/:id' => 'posts#update'

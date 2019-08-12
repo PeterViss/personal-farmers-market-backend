@@ -2,7 +2,8 @@ class User < ApplicationRecord
   has_secure_password
     enum role: {farmer: 0, customer: 1}
   
-    has_many :follows
+    
+    
     #for the Customer 
     has_many :comments
     
@@ -13,8 +14,8 @@ class User < ApplicationRecord
     has_many :cat_farms
     has_many :categories, through: :cat_farms
 
-
-
+    #Follows
+    has_many :follows
     has_many :follower_relationships, foreign_key: :followee_id, class_name: 'Follow'
     has_many :followees, through: :follower_relationships, source: :follower
 

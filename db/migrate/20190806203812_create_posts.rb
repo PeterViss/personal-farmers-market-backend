@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
   def change
     create_table :posts do |t|
       t.string :content
-      t.datetime :date
+      t.datetime :startTime, null: false
       t.string :location
       t.integer :zip
       t.string :state
