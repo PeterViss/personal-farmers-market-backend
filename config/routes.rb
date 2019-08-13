@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/users/:id' => 'users#show'
   post '/users/:id' => 'users#create'
-  get '/users' => 'users#index'
+  get '/user/farmers' => 'users#farmers'
 
   get '/biographies/:id' => 'biographies#show'
   patch '/biographies/:id' => 'biographies#update'

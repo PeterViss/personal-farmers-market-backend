@@ -26,6 +26,8 @@ class PostsController < ApplicationController
         render json: post.to_json(post_show)
     end 
 
+
+
     private 
 
     def post_params 
@@ -40,7 +42,12 @@ class PostsController < ApplicationController
             :include => {
                 :comments => {
                     :except =>[:created_at, :updated_at]
-                }
+                },
+                        :category=>{
+                            :except =>[:created_at, :updated_at]
+                        
+                    
+                 }
             }
         }
     end 

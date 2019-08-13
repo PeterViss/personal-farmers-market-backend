@@ -1,4 +1,5 @@
 require 'pry'
+require 'faker'
 User.destroy_all
 Post.destroy_all
 Comment.destroy_all
@@ -12,19 +13,12 @@ user1 = User.create(username: "Dave" , password: "password", role: 0)
 user2 = User.create(username: "Collin", password: "password", role: 0 )
 user3 = User.create(username: "Peter", password: "password", role: 1)
 
-post1 = Post.create(content: "I hope this works", startTime: DateTime.new(2019, 8, 23), location: "the corner of noneyah business", zip: 20816, state: "MD", attending: 7, user_id: user1.id)
-post2 = Post.create(content: "For Real tho", startTime: DateTime.new(2019, 8, 25), location: "the corner of Giant Food Store", zip: 20816, state: "MD", attending: 12, user_id: user1.id)
-post3 = Post.create(content: "Selling Beats", startTime: DateTime.new(2019, 8, 27), location: "Near Apple Market", zip: 93263, state: "CA", attending: 9, user_id: user1.id)
-post3 = Post.create(content: "Selling Corn", startTime: DateTime.new(2019, 8, 31), location: "Trader Joes", zip: 93263, state: "CA", attending: 10, user_id: user1.id)
-
-
-comment1 = Comment.create(content: "will this work?", user_id: user2.id, post_id: post1.id)
-comment2 = Comment.create(content: "No but this will", user_id: user3.id, post_id: post2.id)
 
 
 
+follow1 = Follow.create(follower_id: user1.id, followee_id: user3.id)
+follow2 = Follow.create(follower_id: user2.id, followee_id: user3.id)
 
-follow2 = Follow.create(follower_id: user1.id, followee_id: user3.id)
 
 biography1 = Biography.create(name: "David Co.", description: "I am creating the database with mah brain", user_id: user1.id)
 biography2 = Biography.create(name: "Collin Co.", description: "I am creating the database with mah feet", user_id: user2.id)
@@ -61,8 +55,14 @@ cat28 = Category.create(name: "Wild harvested forest products")
 
 
 
-catfarm1 = CatFarm.create(user_id: user1.id, category_id: cat1.id)
-catfarm2 = CatFarm.create(user_id: user2.id, category_id: cat2.id)
+post1 = Post.create(content: "I hope this works", startTime: DateTime.new(2019, 8, 23), location: "the corner of noneyah business", zip: 20816, state: "MD", attending: 7, user_id: user1.id, category_id: cat1.id)
+post2 = Post.create(content: "For Real tho", startTime: DateTime.new(2019, 8, 25), location: "the corner of Giant Food Store", zip: 20816, state: "MD", attending: 12, user_id: user1.id, category_id: cat15.id)
+post3 = Post.create(content: "Selling Beats", startTime: DateTime.new(2019, 8, 27), location: "Near Apple Market", zip: 93263, state: "CA", attending: 9, user_id: user1.id, category_id: cat11.id)
+post3 = Post.create(content: "Selling Corn", startTime: DateTime.new(2019, 8, 31), location: "Trader Joes", zip: 93263, state: "CA", attending: 10, user_id: user1.id, category_id: cat25.id)
+
+comment1 = Comment.create(content: "will this work?", user_id: user2.id, post_id: post1.id)
+comment2 = Comment.create(content: "No but this will", user_id: user3.id, post_id: post2.id)
+
 
 prod1 = Product.create(name: "fish", user_id: user1.id, price: "1.70")
 prod2 = Product.create(name: "watermelon", user_id: user2.id, price: "3.70")

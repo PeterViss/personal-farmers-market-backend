@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :state
       t.integer :attending
       t.integer :user_id
+      t.integer :category_id
       t.timestamps
     end
   end

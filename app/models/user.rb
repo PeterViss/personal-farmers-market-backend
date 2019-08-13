@@ -12,7 +12,7 @@ class User < ApplicationRecord
     has_many :products
     has_one :biography
     has_many :cat_farms
-    has_many :categories, through: :cat_farms
+    has_many :categories, through: :posts
 
     #Follows
     has_many :follows

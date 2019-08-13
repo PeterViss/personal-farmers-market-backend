@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_204120) do
     t.string "state"
     t.integer "attending"
     t.integer "user_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
