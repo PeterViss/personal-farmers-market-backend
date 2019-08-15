@@ -13,10 +13,21 @@ class CommentsController < ApplicationController
     def destroy
         comment = Comment.find(params[:id])
         comment.destroy
+        render json: comment.to_json(comment_show)
     end 
 
 private 
     def comment_params
         params.require(:comment).permit(:content, :user_id, :post_id)
     end 
+
+    def comment_show
+        
+            {
+                :except => [
+                    :created_at, :updated_at
+                ]
+            }
+        
+    end
 end

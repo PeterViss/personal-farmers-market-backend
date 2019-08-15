@@ -21,7 +21,7 @@ class LoginController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:username,:password)
+        params.require(:user).permit(:username, :password)
     end
 
     def user_show(user)
@@ -63,6 +63,9 @@ class LoginController < ApplicationController
                         }, 
                         :categories => {
                             :except =>[:created_at, :updated_at]
+                        },
+                        :followers => {
+                            :except =>[:created_at, :updated_at, :password_digest]
                         }
                     }
                 }
