@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
   get '/user/farmers' => 'users#farmers'
 
+  get '/states' => 'states#index'
+
   post '/follows' => 'follows#create'
   delete '/follows' => 'follows#destroy'
 

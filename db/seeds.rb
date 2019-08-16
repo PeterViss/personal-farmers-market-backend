@@ -9,9 +9,21 @@ Category.destroy_all
 Follow.destroy_all
 Product.destroy_all
 
+states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado",
+"Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois",
+"Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland",
+"Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana",
+"Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York",
+"North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+"Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah",
+"Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]
 user1 = User.create(username: "Dave" , password: "password", role: 0)
 user2 = User.create(username: "Collin", password: "password", role: 0 )
 user3 = User.create(username: "Peter", password: "password", role: 1)
+
+states.each do |state| 
+    State.create(name: state)
+end 
 
 
 
@@ -55,10 +67,10 @@ cat28 = Category.create(name: "Wild harvested forest products")
 
 
 
-post1 = Post.create(content: "I hope this works", startTime: DateTime.new(2019, 8, 23), location: "the corner of noneyah business", zip: 20816, state: "MD", attending: 7, user_id: user1.id, category_id: cat1.id)
-post2 = Post.create(content: "For Real tho", startTime: DateTime.new(2019, 8, 25), location: "the corner of Giant Food Store", zip: 20816, state: "MD", attending: 12, user_id: user1.id, category_id: cat15.id)
-post3 = Post.create(content: "Selling Beats", startTime: DateTime.new(2019, 8, 27), location: "Near Apple Market", zip: 93263, state: "CA", attending: 9, user_id: user1.id, category_id: cat11.id)
-post3 = Post.create(content: "Selling Corn", startTime: DateTime.new(2019, 8, 31), location: "Trader Joes", zip: 93263, state: "CA", attending: 10, user_id: user1.id, category_id: cat25.id)
+post1 = Post.create(title: 'I believe!', content: "I hope this works", startTime: DateTime.new(2019, 8, 23), location: "the corner of noneyah business", zip: 20816, state_id: 20, attending: 7, user_id: user1.id, category_id: cat1.id)
+post2 = Post.create(title: 'For Sale!', content: "For Real tho", startTime: DateTime.new(2019, 8, 25), location: "the corner of Giant Food Store", zip: 20816, state_id: 20, attending: 12, user_id: user1.id, category_id: cat15.id)
+post3 = Post.create(title: 'Selling Mah Beats', content: "Selling Beats", startTime: DateTime.new(2019, 8, 27), location: "Near Apple Market", zip: 93263, state_id: 5, attending: 9, user_id: user1.id, category_id: cat11.id)
+post3 = Post.create(title: 'It is Yellow!!!', content: "Selling Corn", startTime: DateTime.new(2019, 8, 31), location: "Trader Joes", zip: 93263, state_id: 5, attending: 10, user_id: user1.id, category_id: cat25.id)
 
 comment1 = Comment.create(content: "will this work?", user_id: user2.id, post_id: post1.id)
 comment2 = Comment.create(content: "No but this will", user_id: user3.id, post_id: post2.id)
