@@ -5,7 +5,7 @@ class LoginController < ApplicationController
         if user && user.authenticate(params[:password])
             render json: {userinfo: user.to_json(user_show(user)), authenticated: "true"}
         else 
-            render json: {message: "no way homay"}
+            render json: {message: "Username or Password are incorrect"}
         end
     end 
 

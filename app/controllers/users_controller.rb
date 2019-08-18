@@ -40,6 +40,9 @@ class UsersController < ApplicationController
             :include => {
                 :comments => {
                     :except =>[:created_at, :updated_at]
+                },
+                :state => {
+                    :except =>[:created_at, :updated_at]
                 }
             }
         }
