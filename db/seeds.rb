@@ -67,10 +67,13 @@ cat28 = Category.create(name: "Wild harvested forest products")
 
 
 
-post1 = Post.create(title: 'I believe!', content: "I hope this works", startTime: DateTime.new(2019, 8, 23), location: "the corner of noneyah business", zip: 20816, state_id: 20, attending: 7, user_id: user1.id, category_id: cat1.id)
-post2 = Post.create(title: 'For Sale!', content: "For Real tho", startTime: DateTime.new(2019, 8, 25), location: "the corner of Giant Food Store", zip: 20816, state_id: 20, attending: 12, user_id: user1.id, category_id: cat15.id)
-post3 = Post.create(title: 'Selling Mah Beats', content: "Selling Beats", startTime: DateTime.new(2019, 8, 27), location: "Near Apple Market", zip: 93263, state_id: 5, attending: 9, user_id: user1.id, category_id: cat11.id)
-post3 = Post.create(title: 'It is Yellow!!!', content: "Selling Corn", startTime: DateTime.new(2019, 8, 31), location: "Trader Joes", zip: 93263, state_id: 5, attending: 10, user_id: user1.id, category_id: cat25.id)
+post1 = Post.create(title: 'I believe!', content: "I hope this works", startTime: DateTime.new(2019, 8, 23), location: "the corner of noneyah business", zip: 20816, city: 'Bethesda', state_id: 20, attending: 7, user_id: user1.id, category_id: cat1.id)
+
+post2 = Post.create(title: 'For Sale!', content: "For Real tho", startTime: DateTime.new(2019, 8, 25), location: "the corner of Giant Food Store", zip: 20816, city: 'Bethesda', state_id: 20,attending: 12, user_id: user1.id, category_id: cat15.id)
+
+post3 = Post.create(title: 'Selling Mah Beats', content: "Selling Beats", startTime: DateTime.new(2019, 8, 27), location: "Near Apple Market", zip: 93263, city: 'Shafter', state_id: 5, attending: 9, user_id: user1.id, category_id: cat11.id)
+
+post4 = Post.create(title: 'It is Yellow!!!', content: "Selling Corn", startTime: DateTime.new(2019, 8, 31), location: "Trader Joes", zip: 93263,city: 'Shafter', state_id: 5, attending: 10, user_id: user1.id, category_id: cat25.id)
 
 comment1 = Comment.create(content: "will this work?", user_id: user2.id, post_id: post1.id)
 comment2 = Comment.create(content: "No but this will", user_id: user3.id, post_id: post2.id)

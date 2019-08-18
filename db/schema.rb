@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_221536) do
     t.string "content"
     t.datetime "startTime", null: false
     t.string "location"
+    t.string "city"
     t.integer "zip"
     t.integer "state_id"
     t.integer "attending"

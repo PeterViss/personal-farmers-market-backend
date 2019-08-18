@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :content
       t.datetime :startTime, null: false
       t.string :location
+      t.string :city
       t.integer :zip
       t.integer :state_id
       t.integer :attending
