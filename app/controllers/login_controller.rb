@@ -3,7 +3,13 @@ class LoginController < ApplicationController
     def new 
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
-            render json: {userinfo: user.to_json(user_show(user)), authenticated: "true"}
+            payload = {"user_id": user.id}
+            token = encode(payload)
+            render json: {
+                userinfo: user.to_json(user_show(user)), 
+                authenticated: "true",
+                token: token
+            }
         else 
             render json: {message: "Username or Password are incorrect"}
         end
