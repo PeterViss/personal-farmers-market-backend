@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_secure_password
     enum role: {farmer: 0, customer: 1}
   
+    validates :username, presence: true, uniqueness: true
+    validates :password, presence: true
+
     
     
     #for the Customer 

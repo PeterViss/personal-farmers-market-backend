@@ -17,8 +17,10 @@ class LoginController < ApplicationController
 
     def create
         @user = User.new(user_params)
+       # binding.pry
         if @user.valid?
             @user.save
+            
             render json: {message:"User create.",userinfo:@user , authenticated:"true"}
         else
             render json: {message:"There was a problem",authenticated:"false"}
@@ -27,7 +29,7 @@ class LoginController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:username, :password, :role)
     end
 
     def user_show(user)
