@@ -27,11 +27,10 @@ Rails.application.routes.draw do
   post '/comments' => 'comments#create'
   delete '/comments/:id' => 'comments#destroy'
 
-  # get '/products/:id' => 'products#show'
-  # get '/products' => 'products#index'
-  # patch '/products/:id' => 'products#update'
-  # post '/products/:id' => 'products#create'
-  # delete '/products/:id' => 'products#destroy'
+  get '/attends/:id' => 'attendss#show'
+  get '/attends' => 'attends#index'
+  post '/attends' => 'attends#create'
+  delete '/attends/:id' => 'attends#destroy'
 
   post '/signup' => 'login#create'
   post '/login' => 'login#new'

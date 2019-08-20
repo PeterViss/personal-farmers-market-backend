@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     private 
 
     def post_params 
-        params.require(:post).permit(:title, :content, :startTime, :location, :zip, :city, :state_id, :attending, :user_id, :category_id)
+        params.require(:post).permit(:title, :content, :startTime, :location, :zip, :city, :state_id, :user_id, :category_id)
     end 
 
     def post_show
@@ -46,11 +46,12 @@ class PostsController < ApplicationController
                 :comments => {
                     :except =>[:created_at, :updated_at]
                 },
-                        :category=>{
-                            :except =>[:created_at, :updated_at]
-                        
-                    
-                 }
+                :category=>{
+                    :except =>[:created_at, :updated_at]   
+                 }, 
+                :attends => {
+                    :except =>[:created_at, :updated_at]
+                } 
             }
         }
     end 

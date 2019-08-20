@@ -8,7 +8,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :city
       t.integer :zip
       t.integer :state_id
-      t.integer :attending
       t.integer :user_id
       t.integer :category_id
       t.timestamps

@@ -47,6 +47,9 @@ class UsersController < ApplicationController
                 :comments => {
                     :except =>[:created_at, :updated_at]
                 },
+                :category => {
+                    :except =>[:created_at, :updated_at]
+                },
                 :state => {
                     :except =>[:created_at, :updated_at]
                 }
@@ -68,7 +71,7 @@ class UsersController < ApplicationController
                 },
                 :posts => {
                     :except =>[:created_at, :updated_at]
-                },
+            },
                 :biography => {
                     :except =>[:created_at, :updated_at]
                 }

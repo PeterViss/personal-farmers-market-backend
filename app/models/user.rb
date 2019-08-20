@@ -8,15 +8,16 @@ class User < ApplicationRecord
     
     
     #for the Customer 
+    has_many :attends
     has_many :comments
-    
+    has_many :posts, through: :attends
     #for the Farmer 
     has_many :posts
-    has_many :products
     has_one :biography
     has_many :cat_farms
     has_many :categories, through: :posts
-
+    accepts_nested_attributes_for :biography
+    
     #Follows
     has_many :follows
     has_many :follower_relationships, foreign_key: :followee_id, class_name: 'Follow'
