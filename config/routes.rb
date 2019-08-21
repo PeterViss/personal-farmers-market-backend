@@ -27,10 +27,14 @@ Rails.application.routes.draw do
   post '/comments' => 'comments#create'
   delete '/comments/:id' => 'comments#destroy'
 
-  get '/attends/:id' => 'attendss#show'
+  get '/attends/:id' => 'attends#show'
   get '/attends' => 'attends#index'
   post '/attends' => 'attends#create'
   delete '/attends/:id' => 'attends#destroy'
+
+  get '/avatars/:id' => 'avatars#show'
+  patch '/avatars/:id' => 'avatars#update'
+  post '/avatars' => 'avatars#create'  
 
   post '/signup' => 'login#create'
   post '/login' => 'login#new'

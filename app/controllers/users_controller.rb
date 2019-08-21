@@ -63,6 +63,9 @@ class UsersController < ApplicationController
                 :created_at, :updated_at, :password_digest
             ],
             :include => {
+                :avatar => {
+                    :except=>[:created_at, :updated_at]
+                },
                 :categories=>{
                     :except =>[:created_at, :updated_at]
                 },
@@ -88,6 +91,9 @@ class UsersController < ApplicationController
                     :created_at, :updated_at, :password_digest
                 ],
                 :include => {
+                    :avatar => {
+                    :except=>[:created_at, :updated_at]
+                    },
                     :categories=>{
                         :except =>[:created_at, :updated_at]
                     },
@@ -108,9 +114,15 @@ class UsersController < ApplicationController
                     :created_at, :updated_at, :password_digest
                 ],
                 :include => {
+                    :avatar => {
+                         :except=>[:created_at, :updated_at]
+                    },
                     :followees => {
                         :except =>[:password_digest, :created_at, :updated_at],
                         :include => {
+                            :avatar => {
+                                :except=>[:created_at, :updated_at]
+                            },
                             :posts => {
                                 :except =>[:created_at, :updated_at],
                                 :include => {:category => {:except => [:created_at, :updated_at]}}

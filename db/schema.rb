@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_021554) do
+ActiveRecord::Schema.define(version: 2019_08_20_174250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,26 @@ ActiveRecord::Schema.define(version: 2019_08_20_021554) do
   create_table "attends", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "avatars", force: :cascade do |t|
+    t.string "avatar_style"
+    t.string "top"
+    t.string "accessories"
+    t.string "hair_color"
+    t.string "hat_color"
+    t.string "facial_hair"
+    t.string "facial_hair_color"
+    t.string "clothes"
+    t.string "color_fabric"
+    t.string "graphic"
+    t.string "eyes"
+    t.string "eyebrow"
+    t.string "mouth"
+    t.string "skin"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

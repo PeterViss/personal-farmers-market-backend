@@ -34,6 +34,25 @@ states.each do |state|
     State.create(name: state)
 end 
 
+# t.string :top
+# t.string :accessories 
+# t.string :hair_color
+# t.string :facial_hair   
+# t.string :facial_hair_color
+# t.string :clothes
+# t.string :color_fabric
+# t.string :eyes
+# t.string :eyebrow
+# t.string :mouth
+# t.string :skin
+# t.integer :user_id
+
+avatar1 = Avatar.create(avatar_style: 'Circle', top: 'NoHair', accessories: 'Blank', hair_color: '', hat_color: '', facial_hair: 'BeardMajestic', facial_hair_color: 'BrownDark', clothes: 'BlazerShirt', color_fabric: '', graphic: '', eyes: 'Default', eyebrow: 'Angry', mouth: 'Disbelief', skin: 'Brown', user_id: user1.id)
+avatar2 = Avatar.create(avatar_style: 'Circle', top: 'ShortHairShortFlat', accessories: 'Red', hair_color: '', hat_color: '', facial_hair: 'BeardMajestic', facial_hair_color: 'BrownDark', clothes: 'BlazerShirt', color_fabric: '', graphic: '', eyes: 'Default', eyebrow: 'Angry', mouth: 'Disbelief', skin: 'Brown', user_id: user2.id)
+avatar3 = Avatar.create(avatar_style: 'Circle', top: 'ShortHairShortFlat', accessories: 'Brown', hair_color: '', hat_color: '', facial_hair: 'BeardMajestic', facial_hair_color: 'BrownDark', clothes: 'BlazerShirt', color_fabric: '', graphic: '', eyes: 'Default', eyebrow: 'Angry', mouth: 'Disbelief', skin: 'Brown', user_id: user3.id)
+avatar4 = Avatar.create(avatar_style: 'Circle', top: 'ShortHairShortFlat', accessories: 'SilverGrey', hair_color: '', hat_color: '', facial_hair: 'BeardMajestic', facial_hair_color: 'BrownDark', clothes: 'BlazerShirt', color_fabric: '', graphic: '', eyes: 'Default', eyebrow: 'Angry', mouth: 'Disbelief', skin: 'Brown', user_id: user4.id)
+avatar5 = Avatar.create(avatar_style: 'Circle', top: 'ShortHairShortFlat', accessories: 'Blonde', hair_color: '', hat_color: '', facial_hair: 'BeardMajestic', facial_hair_color: 'BrownDark', clothes: 'BlazerShirt', color_fabric: '', graphic: '', eyes: 'Default', eyebrow: 'Angry', mouth: 'Disbelief', skin: 'Brown', user_id: user5.id)
+avatar6 = Avatar.create(avatar_style: 'Circle', top: 'ShortHairShortFlat', accessories: 'Black', hair_color: '', hat_color: '', facial_hair: 'BeardMajestic', facial_hair_color: 'BrownDark', clothes: 'BlazerShirt', color_fabric: '', graphic: '', eyes: 'Default', eyebrow: 'Angry', mouth: 'Disbelief', skin: 'Brown', user_id: user6.id)
 
 
 
