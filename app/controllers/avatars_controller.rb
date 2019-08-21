@@ -33,7 +33,7 @@ class AvatarsController < ApplicationController
 
     def avatar_params 
         params.require(:avatar).permit(
-            :top,
+         :top,
          :accessories, 
          :hair_color,
          :hat_color,
@@ -41,7 +41,6 @@ class AvatarsController < ApplicationController
          :facial_hair_color,
          :clothes,
          :color_fabric,
-         :graphic,
          :eyes,
          :eyebrow,
          :mouth,

@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_08_20_174250) do
     t.string "facial_hair_color"
     t.string "clothes"
     t.string "color_fabric"
-    t.string "graphic"
     t.string "eyes"
     t.string "eyebrow"
     t.string "mouth"

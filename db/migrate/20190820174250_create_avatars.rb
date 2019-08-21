@@ -10,7 +10,6 @@ class CreateAvatars < ActiveRecord::Migration[5.2]
       t.string :facial_hair_color
       t.string :clothes
       t.string :color_fabric
-      t.string :graphic
       t.string :eyes
       t.string :eyebrow
       t.string :mouth

@@ -69,6 +69,9 @@ class LoginController < ApplicationController
                 :followees => {
                     :except =>[:password_digest, :created_at, :updated_at],
                     :include => {
+                        :avatar => {
+                            :except=>[:created_at, :updated_at]
+                         },
                         :posts => {
                             :except =>[:created_at, :updated_at],
                             :include => {:category => {:except => [:created_at, :updated_at]}}
