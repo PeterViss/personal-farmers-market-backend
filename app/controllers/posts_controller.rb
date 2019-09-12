@@ -44,11 +44,12 @@ class PostsController < ApplicationController
                     :except =>[:created_at, :updated_at]
                 },
                 :comments => {
+                    :except =>[:created_at, :updated_at],
                     :include => {
                             :user => {
                                 :except=>[:created_at, :updated_at]
-                            },
-                    :except =>[:created_at, :updated_at]
+                            }
+                        }
                 },
                 :category=>{
                     :except =>[:created_at, :updated_at]   
