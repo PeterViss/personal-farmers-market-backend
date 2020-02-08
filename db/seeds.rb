@@ -8,15 +8,14 @@ CatFarm.destroy_all
 Category.destroy_all
 Follow.destroy_all
 
-
 states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado",
-"Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois",
-"Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland",
-"Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana",
-"Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York",
-"North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
-"Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah",
-"Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]
+          "Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois",
+          "Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland",
+          "Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana",
+          "Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York",
+          "North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+          "Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah",
+          "Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]
 
 
 
@@ -33,14 +32,14 @@ user8 = User.create(username: "Jimmy", password: 'password', role: 1)
 
 
 
-states.each do |state| 
-    State.create(name: state)
-end 
+states.each do |state|
+  State.create(name: state)
+end
 
 # t.string :top
-# t.string :accessories 
+# t.string :accessories
 # t.string :hair_color
-# t.string :facial_hair   
+# t.string :facial_hair
 # t.string :facial_hair_color
 # t.string :clothes
 # t.string :color_fabric
@@ -114,9 +113,9 @@ zips = [20810, 20811, 20813, 20814, 20815, 20816, 20812, 20815, 20817, 20824, 20
 cats = [cat5.id, cat18.id, cat25.id, cat1.id]
 
 
-50.times do 
-    Post.create(title: Faker::Lorem.sentence(word_count: 4), content: Faker::Lorem.sentence(word_count: 20), startTime: Faker::Date.between(from: 2.days.ago, to: 3.months.from_now), location: Faker::Lorem.sentence(word_count: 7), zip: zips.sample, city: Faker::Lorem.sentence(word_count: 1), state_id: 20, user_id: rand(1..4), category_id: cats.sample)
-end 
+50.times do
+  Post.create(title: Faker::Lorem.sentence(word_count: 4), content: Faker::Lorem.sentence(word_count: 20), startTime: Faker::Date.between(from: 2.days.ago, to: 3.months.from_now), location: Faker::Lorem.sentence(word_count: 7), zip: zips.sample, city: Faker::Lorem.sentence(word_count: 1), state_id: 20, user_id: rand(1..4), category_id: cats.sample)
+end
 
 
 
@@ -176,17 +175,6 @@ end
 # post48 = Post.create(title: 'It is Yellow!!!', content: "Selling Corn", startTime: DateTime.new(2019, 8, 31), location: "Trader Joes", zip: 93263,city: 'Shafter', state_id: 5, user_id: user1.id, category_id: cat25.id)
 # post49 = Post.create(title: 'I believe!', content: "I hope this works", startTime: DateTime.new(2019, 8, 23), location: "the corner of noneyah business", zip: 20816, city: 'Bethesda', state_id: 20, user_id: user1.id, category_id: cat1.id)
 # post50 = Post.create(title: 'For Sale!', content: "For Real tho", startTime: DateTime.new(2019, 8, 25), location: "the corner of Giant Food Store", zip: 20816, city: 'Bethesda', state_id: 20, user_id: user1.id, category_id: cat15.id)
-
-
-
-
-
-
-
-comment1 = Comment.create(content: "will this work?", user_id: user2.id, post_id: 10)
-comment2 = Comment.create(content: "No but this will", user_id: user3.id, post_id: 35)
-
-
 att1 = Attend.create(user_id: user3.id, post_id: 20)
 att2 = Attend.create(user_id: user3.id, post_id: 33)
 att3 = Attend.create(user_id: user3.id, post_id: 40)
@@ -197,8 +185,3 @@ att7 = Attend.create(user_id: user5.id, post_id: 15)
 att8  = Attend.create(user_id: user5.id, post_id: 22)
 att9 = Attend.create(user_id: user6.id, post_id: 44)
 att10 = Attend.create(user_id: user6.id, post_id: 9)
-
-# binding.pry
-
-
- 
