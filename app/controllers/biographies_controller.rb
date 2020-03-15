@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BiographiesController < ApplicationController
   def index
     bios = Biography.all
@@ -20,14 +22,10 @@ class BiographiesController < ApplicationController
     render json: bio.to_json(bio_show)
   end
 
-
   private
+
   def bio_show
-    {
-      :except => [
-        :created_at, :updated_at
-      ]
-    }
+    { except: %i[created_at updated_at] }
   end
 
   def bio_params

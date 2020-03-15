@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StatesController < ApplicationController
   def index
     states = State.all
@@ -5,12 +7,8 @@ class StatesController < ApplicationController
   end
 
   private
-  def state_show
-    {
-      :except => [
-        :created_at, :updated_at
-      ]
-    }
-  end
 
+  def state_show
+    { except: %i[created_at updated_at] }
+  end
 end

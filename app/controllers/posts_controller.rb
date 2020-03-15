@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def index
     posts = Post.all
@@ -26,8 +28,6 @@ class PostsController < ApplicationController
     render json: post.to_json(post_show)
   end
 
-
-
   private
 
   def post_params
@@ -36,28 +36,12 @@ class PostsController < ApplicationController
 
   def post_show
     {
-      :except => [
-        :created_at, :updated_at
-      ],
-      :include => {
-        :state => {
-          :except =>[:created_at, :updated_at]
-        },
-        :comments => {
-          :except =>[:created_at, :updated_at],
-          :include => {
-            :user => {
-              :except=>[:created_at, :updated_at]
-            }
-          }
-        },
-        :category=>{
-          :except =>[:created_at, :updated_at]
-        },
-        :attends => {
-          :except =>[:created_at, :updated_at]
-        }
-      }
+      except: %i[created_at updated_at],
+      include: { state: { except: %i[created_at updated_at] },
+                 comments: { except: %i[created_at updated_at],
+                             include: { user: { except: %i[created_at updated_at] } } },
+                 category: { except: %i[created_at updated_at] },
+                 attends: { except: %i[created_at updated_at] } }
     }
   end
 end

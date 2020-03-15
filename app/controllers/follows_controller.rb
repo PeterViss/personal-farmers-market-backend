@@ -17,13 +17,6 @@ class FollowsController < ApplicationController
   end
 
   def follow_show
-
-    {
-      :except => [
-        :created_at, :updated_at
-      ]
-    }
-
+    { except: %i[created_at updated_at] }
   end
-
 end

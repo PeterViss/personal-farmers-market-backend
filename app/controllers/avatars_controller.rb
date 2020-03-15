@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AvatarsController < ApplicationController
   def index
     avatars = Avatar.all
@@ -23,11 +25,7 @@ class AvatarsController < ApplicationController
   private
 
   def avatar_show
-    {
-      :except => [
-        :created_at, :updated_at
-      ]
-    }
+    { except: %i[created_at updated_at] }
   end
 
   def avatar_params
@@ -44,6 +42,7 @@ class AvatarsController < ApplicationController
       :eyebrow,
       :mouth,
       :skin,
-      :user_id)
+      :user_id
+    )
   end
 end

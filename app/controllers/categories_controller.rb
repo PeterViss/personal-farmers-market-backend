@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CategoriesController < ApplicationController
   def index
     categories = Category.all
@@ -12,10 +14,6 @@ class CategoriesController < ApplicationController
   private
 
   def category_show
-    {
-      :except =>
-      [:created_at, :updated_at]
-    }
-
+    { except: %i[created_at updated_at] }
   end
 end

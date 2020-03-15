@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def create
     comment = Comment.create(comment_params)
@@ -17,17 +19,12 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:content, :user_id, :post_id)
   end
 
   def comment_show
-
-    {
-      :except => [
-        :created_at, :updated_at
-      ]
-    }
-
+    { except: %i[created_at updated_at] }
   end
 end

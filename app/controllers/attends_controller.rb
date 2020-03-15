@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AttendsController < ApplicationController
   def index
     attends = Attend.all
@@ -27,8 +29,6 @@ class AttendsController < ApplicationController
   end
 
   def attend_show
-    {
-      :except => [:created_at, :updated_at]
-    }
+    { except: %i[created_at updated_at] }
   end
 end

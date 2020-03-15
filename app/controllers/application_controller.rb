@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::API
   def secret_key
     'hobbes'
@@ -8,6 +10,6 @@ class ApplicationController < ActionController::API
   end
 
   def decode(token)
-    JWT.decode(token, secret_key, true, {algorithm: 'HS256'})[0]
+    JWT.decode(token, secret_key, true, algorithm: 'HS256').first
   end
 end
