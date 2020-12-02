@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::API
   def secret_key
-    'hobbes'
+    ''
   end
 
   def encode(payload)
